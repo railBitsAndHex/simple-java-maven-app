@@ -18,9 +18,13 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh 'chmod +rx ./target/my-app.jar'
-                sh './jenkins/scripts/deliver.sh'
+                echo 'Delivering'
             }
         }
-    }
+        stage('Complete') {
+            steps {
+                echo "completed"
+            }    
+        }
+}
 }
